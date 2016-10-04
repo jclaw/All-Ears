@@ -1,0 +1,105 @@
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@keyframes pulse-1 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.01, 1.01, 1.01);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse-1 {
+  animation-name: pulse-1;
+}
+
+
+
+
+@keyframes pulse-2 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse-2 {
+  animation-name: pulse-2;
+}
+
+
+
+
+@keyframes pulse-3 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse-3 {
+  animation-name: pulse-3;
+}
+
+
+
+
+
+@keyframes pulse-4 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.04, 1.04, 1.04);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse-4 {
+  animation-name: pulse-4;
+}
+
+
+
+
+
+@keyframes pulse-5 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse-5 {
+  animation-name: pulse-5;
+}

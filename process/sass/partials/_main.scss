@@ -1,0 +1,24 @@
+body {
+	font-family: helvetica;
+	background: $light-gray;
+}
+
+.top-bar {
+	$topbar-bg-color: $primary-color;
+	$topbar-bg: $topbar-bg-color;
+	background: $topbar-bg;
+	color: white;
+	font-size: 1.3em;
+
+	.title {
+		font-weight: 600;
+	}
+
+	.logo {
+		height: 30px;
+	}
+}
+
+.site-content {
+	margin-top: 40px;
+}

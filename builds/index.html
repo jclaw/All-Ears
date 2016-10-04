@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="earApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All Ears</title>
+	<link rel="stylesheet" type ="text/css" href="vendor/gridster/dist/jquery.gridster.css"></link>
+	<link rel="stylesheet" type ="text/css" href="vendor/animate.css-master/animate.min.css"></link>
+	<link rel="stylesheet" type ="text/css" href="node_modules/font-awesome/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" type ="text/css" href="styles/app.css"></link>
+
+</head>
+<body>
+<div class="top-bar">
+	<div class="top-bar-title">
+		<span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+			<button class="dark" type="button" data-toggle></button>
+		</span>
+		<img src="images/logo.svg" class="logo"></img>
+		<span class="title">All Ears</span>
+	</div>
+	<div id="responsive-menu">
+		<div class="top-bar-left">
+		</div>
+		<div class="top-bar-right">
+		</div>
+	</div>
+</div>
+<div class="row site-content">
+	<div class="large-12 columns">
+		<div class="row">
+			<div id="angular-view" ng-view></div>
+		</div>
+	</div>
+</div>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.js"></script>
+	<script src="node_modules/angular-aria/angular-aria.js"></script>
+	<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+	<script src="node_modules/angular-resource/angular-resource.js"></script>
+	<script src="node_modules/angular-route/angular-route.js"></script>
+	<script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
+	<script src="node_modules/angular-touch/angular-touch.js"></script>
+	<script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="node_modules/what-input/what-input.js"></script>
+
+	<script src="vendor/d3-master/d3.min.js"></script>
+
+	<script src="scripts/app.js"></script>
+	<script src="scripts/factories/midiData.js"></script>
+	<script src="scripts/services/keyboardConfig.js"></script>
+	<script src="scripts/services/keyCodeHelper.js"></script>
+	<script src="scripts/services/noteLogicHelpers.js"></script>
+	<script src="scripts/directives/numberline.js"></script>
+	<script src="scripts/directives/confirmOnExit.js"></script>
+	<script src="scripts/directives/keyCodes.js"></script>
+	<script src="scripts/directives/hoverClass.js"></script>
+	<script src="scripts/controllers/kbdcontrol.js"></script>
+	<script src="scripts/controllers/player.js"></script>
+	<script src="scripts/controllers/results.js"></script>
+
+
+</body>
+
+</html>
