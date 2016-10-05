@@ -2,6 +2,7 @@
 	background: white;
 	border-radius: 71px;
 	overflow: hidden;
+    margin-bottom: 40px;
 
 	.player-header {
 		padding: 38px 62px 28px;
@@ -25,14 +26,22 @@
 		}
 	}
 
-	.progress {
-		border-radius: 20px;
-		overflow: hidden;
-		.progress-meter {
-			transition: width 500ms;
-		}
+    .progress-wrapper {
+        margin-bottom: 1rem;
+        .progress {
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 0.1rem;
+            .progress-meter {
+                transition: width 500ms;
+            }
+        }
+        .level {
+            margin-left: 10px;
+        }
+    }
 
-	}
+
 
 	.player-footer {
 		background: $medium-gray;
