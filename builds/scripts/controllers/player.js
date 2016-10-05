@@ -93,8 +93,8 @@ angular.module('earApp')
 	}
 
 	$scope.nextLevel = function() {
+        level.incProgress();
 		if (level.get() + 1 < $scope.levels) {
-            level.incProgress();
 			updateSavedData();
 		} else {
 			// game over!
