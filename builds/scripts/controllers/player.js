@@ -3,8 +3,26 @@
 angular.module('earApp')
 .controller('PlayerCtrl', function($scope, $rootScope, $timeout, keyboardConfig, localStorageService) {
 
-	$scope.level = 0;
-	$scope.levels = 2;
+    function Level() {
+        this.set = function(level) {
+            $scope.level = level;
+            $scope.progressLevel = level;
+            return level;
+        }
+        this.incProgress = function() {
+            return $scope.progressLevel++;
+        }
+        this.update = function() {
+            $scope.level = $scope.progressLevel;
+        }
+        this.get = function() {
+            return $scope.level;
+        }
+    }
+
+    var level = new Level();
+    level.set(0);
+	$scope.levels = 6;
 	$scope.gameData = [[]];
 	$scope.state = 'referenceNote';
 	$scope.referenceNote = 55;
@@ -62,20 +80,21 @@ angular.module('earApp')
 	}
 
 	$scope.continue = function() {
+        level.update();
 		$scope.gameData.push([]);
 		initiateMysteryNote();
 	}
 
 	$scope.skip = function() {
 		console.log($scope.gameData);
-		$scope.gameData[$scope.level] = [];
+		$scope.gameData[level.get()] = [];
 		$scope.nextLevel();
 		$scope.continue();
 	}
 
 	$scope.nextLevel = function() {
-		$scope.level++;
-		if ($scope.level < $scope.levels) {
+		if (level.get() + 1 < $scope.levels) {
+            level.incProgress();
 			updateSavedData();
 		} else {
 			// game over!
@@ -126,7 +145,7 @@ angular.module('earApp')
 			type: 'correct',
 			midi: note
 		};
-		$scope.gameData[$scope.level].push(mysteryNoteObj);
+		$scope.gameData[$scope.progressLevel].push(mysteryNoteObj);
 		$scope.notesToSkip.push(note);
 	}
 
@@ -173,11 +192,11 @@ angular.module('earApp')
 				$scope.action = 'error';
 				$scope.errorClass = 'e-' + (Math.abs($scope.mysteryNote - $scope.currNote));
 				var errorNote = {
-					key: $scope.gameData[$scope.level].length, // sets key to which error number this is. the mystery note is already in the list
+					key: $scope.gameData[level.get()].length, // sets key to which error number this is. the mystery note is already in the list
 					type: 'error',
 					midi: $scope.currNote
 				};
-				$scope.gameData[$scope.level].push(errorNote);
+				$scope.gameData[level.get()].push(errorNote);
 				$scope.$apply();
 				if ($scope.errorTimer != null) {
 					$timeout.cancel($scope.errorTimer);
